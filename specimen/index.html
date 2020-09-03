@@ -99,8 +99,7 @@
             query += " ?s rdfs:label ?label ;  a/rdfs:subClassOf? type:標本. ";
             query += " ?s jps:spatial ?place . ";
             query += " ?place schema:geo [schema:latitude ?lat; schema:longitude ?long ]. ";
-            query += " ?s schema:description ?desc. ";
-            query += " FILTER(strends(?desc, '[StartDateCollected]')). ";
+            query += " ?s jps:temporal [schema:description ?desc].";
             query += " ?s schema:description ?value. ";
             query += " FILTER(bif:contains(?value, \"\'"+title+"\'\")). ";
             query += " } LIMIT 500";
